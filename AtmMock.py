@@ -4,10 +4,12 @@ import time
 
 
 def account_number():
+    # Generates a 10digit account number
     return random.randrange(1000000000, 30000000000)
 
 
 def account_login(get_login_method,users):
+    # handles login system and verifies if the username entered is valid
     if get_login_method == 1:
         print('Welcome please login below')
         username = str(input('Username: '))
@@ -38,6 +40,7 @@ def account_login(get_login_method,users):
 
 
 def account_signup(get_login_method):
+    # registers a new user and returns the users account username,number,password
     if get_login_method == 2:
         print('Welcome, Guest\nFill in the form below ')
         username = str(input('Username: '))
@@ -57,6 +60,7 @@ def account_signup(get_login_method):
 
 
 def handle_transaction(get_transaction_status, users, username):
+    # handles users transaction
     if get_transaction_status == 1:
         print('How Much do you want to withdraw?')
         withdraw_amount = int(input('Enter Amount to withdraw: '))
@@ -93,6 +97,7 @@ def handle_transaction(get_transaction_status, users, username):
 
 
 def main():
+    # main function of the ATM machine.
     users = {'admin': {'balance': 0, 'password': 'admin','account_number':1234586555}}
     print('Welcome to TheAsyncWorld. \npress 1 to login.\npress 2 for registration')
     get_login_method = int(input(">> "))
